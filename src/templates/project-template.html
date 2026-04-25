@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-Z3N41XHP4M"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-Z3N41XHP4M");
+    </script>
+
+    <title>{{name}} - Nos Projets</title>
+    <link rel="icon" href="{{basePath}}/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="{{assetsBasePath}}/css/styles.css" />
+  </head>
+  <body>
+    {{header}}
+
+    <main>
+      <section class="path-product">
+        <a href="../projets.html">Nos Projets</a> → {{city}}
+      </section>
+
+      <section class="project-header">
+        <h1>{{name}}</h1>
+        <div class="project-meta">
+          <span class="project-city">Lieu : {{city}}</span>
+          <span class="project-year">Année : {{year}}</span>
+        </div>
+        <div class="project-products-grid">{{products}}</div>
+      </section>
+
+      <section class="project-gallery">{{images}}</section>
+
+      <div class="search-overlay">
+        <div class="search-overlay-content">
+          <button class="search-close" aria-label="Fermer">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+
+          <div class="search-box">
+            <input
+              type="text"
+              class="search-input"
+              placeholder="Rechercher un produit, une collection..."
+              autocomplete="off"
+            />
+          </div>
+
+          <div class="search-results"></div>
+        </div>
+      </div>
+    </main>
+
+    {{footer}}
+
+    <div id="image-modal" class="image-modal">
+      <span class="close-modal">&times;</span>
+      <img class="modal-content" id="modal-image" />
+    </div>
+
+    <script src="{{basePath}}/js/main.js"></script>
+    <script src="{{basePath}}/js/mobile-menu.js"></script>
+    <script src="{{basePath}}/js/search-data.js"></script>
+    <script src="{{basePath}}/js/search.js"></script>
+  </body>
+</html>

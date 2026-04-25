@@ -1,0 +1,20 @@
+# Dépendances
+node_modules/
+
+# macOS
+.DS_Store
+
+# Vidéos (trop lourdes pour git)
+*.mp4
+*.mov
+assets/videos/
+
+# Fichiers de debug / test
+debug-catalogue.log
+test.php
+indexsave.html
+
+# Source maps
+css/styles.css.map
+scss/style.css
+scss/style.css.map

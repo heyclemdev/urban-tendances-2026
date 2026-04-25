@@ -1,0 +1,367 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+@use "../base/functions" as *;
+
+// ================================ //
+// ===== BOUTON MENU ============== //
+// ================================ //
+
+.menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid currentColor;
+  cursor: pointer;
+  padding: 7px 18px;
+  z-index: 3000;
+  flex-shrink: 0;
+  color: $color-text;
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    opacity 0.3s ease;
+  min-width: 80px;
+
+  &:hover {
+    color: $primary;
+  }
+
+  &__text,
+  &__close {
+    font-size: 0.62rem;
+    font-weight: 400;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    font-family: inherit;
+    line-height: 1;
+    transition: opacity 0.2s ease;
+  }
+
+  // État par défaut : "MENU" visible, "✕" caché
+  &__text {
+    display: block;
+  }
+  &__close {
+    display: none;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+  }
+
+  // État actif : bascule vers ✕
+  &.is-active {
+    .menu-btn__text {
+      display: none;
+    }
+    .menu-btn__close {
+      display: block;
+    }
+  }
+}
+
+// ================================ //
+// ===== OVERLAY MENU ============= //
+// ================================ //
+
+body.menu-open {
+  overflow: hidden;
+}
+
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  // Pas de transition au rendu initial — activée par JS après le premier paint
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  body.ui-ready & {
+    transition:
+      opacity 0.45s ease,
+      visibility 0.45s ease;
+  }
+}
+
+// ================================ //
+// ===== PANNEAU MENU ============= //
+// ================================ //
+
+.mobile-menu-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 52vw;
+  max-width: 660px;
+  height: 100%;
+  background: #fff;
+  box-shadow: 8px 0 40px rgba(0, 0, 0, 0.12);
+  padding: 6rem 4rem 4rem 4rem;
+  transform: translateX(-100%);
+  // Pas de transition au rendu initial — activée par JS après le premier paint
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  pointer-events: auto;
+
+  body.ui-ready & {
+    transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .mobile-menu-overlay.active & {
+    transform: translateX(0);
+  }
+
+  // Bouton fermer : invisible, présent pour l'accessibilité
+  .mobile-menu-close {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    width: 0;
+    height: 0;
+  }
+
+  @include mobile {
+    width: 88%;
+    max-width: none;
+    padding: 5rem 2rem 3rem;
+  }
+}
+
+// ================================ //
+// ===== NAVIGATION DANS LE MENU = //
+// ================================ //
+
+.mobile-nav {
+  margin-top: 0;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  // Liens principaux de premier niveau
+  & > ul > li {
+    opacity: 0;
+    transform: translateX(-16px);
+    transition:
+      opacity 0.4s ease,
+      transform 0.4s ease;
+
+    @for $i from 1 through 10 {
+      &:nth-child(#{$i}) {
+        transition-delay: #{0.06 + $i * 0.055}s;
+      }
+    }
+  }
+}
+
+.mobile-menu-overlay.active .mobile-nav > ul > li {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+// Liens + boutons toggle
+.mobile-nav > ul > li > a,
+.mobile-submenu-toggle {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 0;
+  color: #1a1a1a;
+  text-decoration: none;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  transition:
+    color 0.25s ease,
+    padding-left 0.25s ease;
+
+  &:hover {
+    color: $primary;
+    padding-left: 6px;
+  }
+}
+
+// Bouton sous-menu : flèche à droite
+.mobile-submenu-toggle {
+  justify-content: space-between;
+}
+
+.mobile-arrow {
+  transition: transform 0.3s ease;
+  font-size: 0.6rem;
+  opacity: 0.4;
+  flex-shrink: 0;
+}
+
+.mobile-submenu.active .mobile-arrow {
+  transform: rotate(180deg);
+}
+
+// Sous-menu accordion
+.mobile-submenu-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s ease;
+}
+
+.mobile-submenu.active .mobile-submenu-content {
+  max-height: 1200px;
+}
+
+// ================================ //
+// ===== GRILLE ICÔNES PRODUITS == //
+// ================================ //
+
+.mobile-products-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.4rem;
+  padding: 0.75rem 0 0.5rem;
+
+  li {
+    margin: 0;
+    opacity: 0;
+    transform: none;
+    transition: opacity 0.3s ease !important;
+    transition-delay: 0s !important;
+  }
+
+  .mobile-submenu.active & li {
+    opacity: 1;
+  }
+
+  a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.65rem 0.4rem;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
+    text-align: center;
+    transition:
+      color 0.2s ease,
+      border-color 0.2s ease,
+      background 0.2s ease;
+    letter-spacing: 0; // reset
+    font-size: inherit; // reset
+    text-transform: none; // reset
+    padding-left: 0.4rem; // reset hover
+    font-weight: 400;
+
+    &:hover {
+      color: $primary;
+      border-color: $primary;
+      background: rgba($primary, 0.04);
+      padding-left: 0.4rem; // pas de décalage
+    }
+
+    span {
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+  }
+}
+
+.menu-icon-product {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.menu-icon-collection {
+  display: none;
+}
+
+// ================================ //
+// ===== RECHERCHE DANS LE MENU == //
+// ================================ //
+
+.menu-search-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+  padding: 0.65rem 0;
+  background: transparent;
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+  cursor: pointer;
+  color: #555;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: left;
+  transition: color 0.25s ease;
+  opacity: 0;
+  animation: none;
+
+  .mobile-menu-overlay.active & {
+    opacity: 1;
+    transition:
+      opacity 0.4s ease 0.6s,
+      color 0.25s ease;
+  }
+
+  &:hover {
+    color: $primary;
+  }
+
+  svg {
+    flex-shrink: 0;
+    opacity: 0.6;
+  }
+}
+
+// Sous-menus simple (collections, etc.)
+.mobile-submenu-content:not(.mobile-products-grid) {
+  padding-left: 0.25rem;
+
+  li {
+    margin-bottom: 0;
+  }
+
+  a {
+    display: block;
+    padding: 0.5rem 0;
+    font-size: 0.65rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #555;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    transition:
+      color 0.25s ease,
+      padding-left 0.25s ease;
+
+    &:hover {
+      color: $primary;
+      padding-left: 6px;
+    }
+  }
+}

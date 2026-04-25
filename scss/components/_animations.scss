@@ -1,0 +1,70 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+@use "../base/functions" as *;
+
+// ANIMATION SCROLL PAGE SUR MESURE //
+.surmesure-gallery__item {
+  position: relative;
+  overflow: hidden;
+  //border-radius: 8px;
+  aspect-ratio: 4/3;
+  background-color: #e0e0e0;
+}
+
+/* 👇 Ajoutez cette règle pour les images */
+.surmesure-gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Remplit le conteneur en gardant les proportions */
+  display: block; /* Évite les espaces blancs en dessous */
+}
+
+// IMAGE QUI S'AGRANDIT //
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(227, 226, 226, 0.9);
+  overflow: auto;
+
+  @include mobile {
+    padding-top: 300px;
+  }
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.close-modal {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: $dark;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+
+  @include mobile {
+    top: 250px;
+    right: 30px;
+  }
+}
+
+.close-modal:hover {
+  color: $primary;
+}
+
+.project-images img {
+  cursor: pointer; /* Indique que l'image est cliquable */
+}

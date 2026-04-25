@@ -1,0 +1,34 @@
+@use "../utils/variables" as *;
+
+body {
+  font-family: $font-main;
+}
+
+h1 {
+  font-size: 2.6rem;
+  line-height: 1.2;
+}
+p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: $color-text;
+}
+
+h1 {
+  font-family: $font-title;
+}
+
+h2,
+h3,
+h4,
+p,
+a,
+ul,
+nav {
+  font-family: $font-main;
+  font-weight: 200;
+}
+
+a {
+  color: $color-text;
+}

@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{collectionName}} | Urban Tendances</title>
+    <link rel="icon" href="{{basePath}}/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="{{basePath}}/css/styles.css" />
+  </head>
+  <body>
+    {{header}}
+
+    <main>
+      <!--<section class="path-product">Collections -> {{collectionName}}</section>-->
+      <section class="collection-hero">
+        {{symbolBlock}}
+        <div class="collec-name">
+          <h1 class="collection-title">{{collectionName}}</h1>
+        </div>
+        <div class="collec-text">
+          <p class="collection-description">{{collectionDescription}}</p>
+        </div>
+      </section>
+      <!-- ✅ AJOUTE ICI LA COLLABORATION -->
+      {{collaboration}}
+      <section class="collection-products">
+        <h2>Produits de la collection</h2>
+        <div class="product-grid">{{productList}}</div>
+      </section>
+      <section class="other-collections">
+        <h2>Autres collections</h2>
+        <div class="other-collections-grid">{{otherCollections}}</div>
+      </section>
+      <!-- SECTION ÉLÉMENTS (nouveau) -->
+      <section class="elements-section">
+        <h2 class="elements-title">Éléments</h2>
+        <div class="elements-grid">
+          <!-- Carte La Terre -->
+          <div class="element-card">
+            <h3 class="element-title">La terre</h3>
+            <div class="element-content">
+              <p>
+                La Terre représente la stabilité, la solidité et la matérialité.
+                C'est le fondement sur lequel nous bâtissons nos vies.
+              </p>
+              <p>
+                Symboliquement, elle est associée à la fertilité, la croissance
+                et la permanence.
+              </p>
+              <p>
+                En alchimie, la Terre est le symbole du début de tout processus,
+                le point de départ de la transformation. C'est pourquoi vous
+                retrouverez des produits au design simple, robustes, totémiques,
+                rassurants.
+              </p>
+              <p class="element-collections">
+                Comme les collections :
+                <a href="{{basePath}}/dist/collections/printemps.html"
+                  >Printemps</a
+                >
+                - <a href="{{basePath}}/dist/collections/silva.html">Silva</a> -
+                <a href="{{basePath}}/dist/collections/respire.html">Respire</a>
+                -
+                <a href="{{basePath}}/dist/collections/origine.html">Origine</a>
+                -
+                <a href="{{basePath}}/dist/collections/tulipe.html">Tulipe</a>
+              </p>
+            </div>
+          </div>
+
+          <!-- Carte L'eau -->
+          <div class="element-card">
+            <h3 class="element-title">L'eau</h3>
+            <div class="element-content">
+              <p>
+                L'Eau est le symbole de la fluidité, de l'émotion et du flux de
+                la vie.
+              </p>
+              <p>
+                Elle est liée à notre intuition, notre sensibilité et notre
+                capacité à nous adapter aux changements.
+              </p>
+              <p>
+                L'Eau est également un symbole de purification et de renouveau,
+                et en alchimie, elle représente le pouvoir de dissolution et de
+                transformation. C'est pourquoi vous retrouverez des produits au
+                design discret, des structures qui laisse passer le flux et
+                apportant de la clarté.
+              </p>
+              <p class="element-collections">
+                Comme les collections :
+                <a href="{{basePath}}/dist/collections/bulle.html">Bulle</a> -
+                <a href="{{basePath}}/dist/collections/escale.html">Escale</a>
+              </p>
+            </div>
+          </div>
+
+          <!-- Carte L'air -->
+          <div class="element-card">
+            <h3 class="element-title">L'air</h3>
+            <div class="element-content">
+              <p>
+                L'Air est l'essence de la communication, de la pensée et de
+                l'intellect. Il représente la liberté, l'inspiration et la
+                légèreté.
+              </p>
+              <p>
+                Symboliquement, l'Air est associé à l'esprit, à la connaissance
+                et à la sagesse.
+              </p>
+              <p>
+                En l'alchimie, l'Air est considéré comme le catalyseur,
+                l'élément qui active et transforme les autres éléments. C'est
+                pourquoi vous retrouverez des produits au design atypique, des
+                objets détournés, aux sens cachés.
+              </p>
+              <p class="element-collections">
+                Comme les collections :
+                <a href="{{basePath}}/dist/collections/enjoy.html">Enjoy</a> -
+                <a href="#">Mosaïque</a> -
+                <a href="{{basePath}}/dist/collections/litterature&co.html"
+                  >Littérature</a
+                >
+              </p>
+            </div>
+          </div>
+
+          <!-- Carte Le feu -->
+          <div class="element-card">
+            <h3 class="element-title">Le feu</h3>
+            <div class="element-content">
+              <p>
+                Le Feu est l'énergie ardente de la transformation et de la
+                passion. C'est le symbole du pouvoir, de la volonté et de la
+                purification.
+              </p>
+              <p>
+                Le Feu représente également la lumière, l'illumination et la
+                conscience spirituelle.
+              </p>
+              <p>
+                En alchimie, c'est l'élément du changement et de la
+                transmutation, capable de transformer le plomb en or. C'est
+                pourquoi vous retrouverez des produits au design dynamique, avec
+                un jeu de forme, de courbes
+              </p>
+              <p class="element-collections">
+                Comme les collections :
+                <a href="{{basePath}}/dist/collections/thal-s.html">Thal S</a> -
+                <a href="{{basePath}}/dist/collections/jeux&co.html"
+                  >Jeux & Co</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="search-overlay">
+        <div class="search-overlay-content">
+          <button class="search-close" aria-label="Fermer">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+
+          <div class="search-box">
+            <input
+              type="text"
+              class="search-input"
+              placeholder="Rechercher un produit, une collection..."
+              autocomplete="off"
+            />
+          </div>
+
+          <div class="search-results"></div>
+        </div>
+      </div>
+    </main>
+
+    {{footer}}
+
+    <script src="{{basePath}}/js/main.js"></script>
+    <script src="{{basePath}}/js/mobile-menu.js"></script>
+    <script src="{{basePath}}/js/search-data.js"></script>
+    <script src="{{basePath}}/js/search.js"></script>
+  </body>
+</html>

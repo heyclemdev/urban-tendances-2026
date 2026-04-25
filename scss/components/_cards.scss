@@ -1,0 +1,572 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+@use "../base/functions" as *;
+
+// ======================================
+// COMPONENT : BOX CARD PRODUCTS
+// ======================================
+
+.box {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  position: relative;
+  background: #f6f6f6;
+  border-radius: 20px;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  // Responsive
+  @media (max-width: 768px) {
+    grid-template-columns: 48px 1fr; // Réduire la colonne icône
+    border-radius: 16px;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 40px 1fr;
+    border-radius: 12px;
+  }
+}
+
+.box-icon {
+  display: grid;
+  place-items: center;
+  color: $primary;
+
+  img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+
+    @media (max-width: 768px) {
+      width: 24px;
+      height: 24px;
+    }
+
+    @media (max-width: 480px) {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.box-label {
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 16px;
+  padding-top: 16px;
+  font-weight: 500;
+  color: #555;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    padding-top: 12px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 12px;
+    padding-top: 8px;
+  }
+}
+
+.box-title {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  padding-left: 16px;
+  font-size: 14px;
+  letter-spacing: 0.125em;
+  color: #555;
+  text-transform: uppercase;
+
+  @media (max-width: 768px) {
+    height: 48px;
+    padding-left: 12px;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+  }
+
+  @media (max-width: 480px) {
+    height: 40px;
+    padding-left: 8px;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+  }
+}
+
+.box-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 18px 0 18px 0;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    border-radius: 14px 0 14px 0;
+  }
+
+  @media (max-width: 480px) {
+    border-radius: 10px 0 10px 0;
+  }
+}
+
+.studio-button {
+  position: absolute;
+  bottom: 12px; /* Réduit de 16px à 12px */
+  right: 12px; /* Réduit de 34px à 12px */
+  display: flex;
+  align-items: center;
+  background: $secondary;
+  color: white;
+  padding: 6px 8px; /* Réduit de 8px 10px à 6px 8px */
+  border-radius: 50px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Ombre réduite */
+  transition: 0.35s ease all;
+  overflow: hidden;
+  max-width: 32px; /* Réduit de 40px à 32px */
+  font-size: 12px; /* Ajout pour réduire le texte */
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.studio-button-icon {
+  position: relative;
+  top: 1px;
+  font-size: 14px; /* Ajout pour réduire l'icône */
+}
+
+.studio-button-label {
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 0 6px; /* Réduit de 8px à 6px */
+  opacity: 0;
+  transform: translateX(10px);
+  transition: 0.25s ease all;
+  font-size: 11px; /* Ajout pour réduire le texte du label */
+}
+
+// Hover uniquement sur desktop
+@media (hover: hover) and (min-width: 769px) {
+  .box:hover {
+    .studio-button {
+      max-width: 100%;
+    }
+    .studio-button-label {
+      opacity: 1;
+      transform: translateX(0);
+      transition:
+        0.25s 0.1s ease-in opacity,
+        0.15s 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275) transform;
+    }
+  }
+}
+
+// Désactiver l'effet hover sur mobile/tablette
+@media (hover: hover) {
+  .box:hover {
+    .studio-button {
+      max-width: 100%;
+    }
+    .studio-button-label {
+      opacity: 1;
+      transform: translateX(0);
+      transition:
+        0.25s 0.1s ease-in opacity,
+        0.15s 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275) transform;
+    }
+  }
+}
+
+// Sur mobile/tablette, toujours afficher le label
+@media (hover: none) {
+  .studio-button {
+    max-width: 100%;
+  }
+  .studio-button-label {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+// ======================================
+// COLLECTION PRODUCT CARDS
+// ======================================
+.product-card {
+  background: #fff;
+  //border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.product-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.card-image {
+  width: 100%;
+  height: fluid(250px, 300px);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.product-title {
+  font-family: $font-main;
+  font-weight: 200;
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #1a1a1a;
+}
+
+.product-collection {
+  font-family: $font-main;
+  font-weight: 200;
+  font-size: 14px;
+  color: #999;
+  margin: 0;
+}
+
+// ======================================
+// ====== COMMITMENT CARDS INDEX =======
+// ======================================
+
+.commitment-card {
+  text-align: center;
+  padding: 1.2rem;
+  // border-radius: 10px;
+  background-color: rgb(247, 247, 247);
+  filter: drop-shadow(2px 1px 2px rgba(0, 0, 0, 0.4));
+
+  &__icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+
+    img {
+      width: 70%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    font-weight: 100;
+    text-align: left;
+  }
+
+  &__description {
+    color: #666;
+    line-height: 1.2;
+    text-align: left;
+  }
+}
+
+// ======================================
+// ====== INSTAGRAM FEED INDEX ==========
+// ======================================
+.instagram-feed {
+  padding: 20px 20px;
+  background: #f9f9f9;
+
+  @include mobile {
+    padding: 5px 15px;
+  }
+
+  &__inner {
+    max-width: 1800px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 300;
+  }
+
+  &__subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+  }
+
+  &__widget-wrapper {
+    position: relative;
+  }
+
+  &__cover-strip {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: #f9f9f9;
+    z-index: 10;
+    pointer-events: none;
+  }
+}
+
+// ======================================
+// ====== CARROUSEL INDEX ===============
+// ======================================
+.featured-products {
+  padding: 20px 20px;
+  background: #f9f9f9;
+
+  @include mobile {
+    padding: 5px 15px;
+  }
+
+  &__inner {
+    max-width: 1800px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #222;
+
+    @include tablet {
+      font-size: 2rem;
+    }
+
+    @include mobile-small {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 40px;
+
+    @include mobile-small {
+      font-size: 1rem;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.products-carousel {
+  position: relative;
+  padding: 0;
+}
+
+.carousel-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+  user-select: none;
+  padding-bottom: 30px;
+
+  // Scrollbar personnalisée pour Firefox
+  scrollbar-width: thin;
+  scrollbar-color: $primary #e0e0e0;
+
+  // Scrollbar personnalisée pour Chrome, Safari, Edge
+  &::-webkit-scrollbar {
+    height: 8px;
+    display: block;
+
+    @include mobile {
+      height: 6px;
+    }
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #e0e0e0;
+    border-radius: 10px;
+    margin: 0 20px;
+
+    @include mobile {
+      margin: 0 15px;
+    }
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $primary;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: darken($primary, 10%);
+    }
+  }
+
+  &:active {
+    cursor: grabbing;
+  }
+
+  @include mobile {
+    padding-bottom: 20px;
+  }
+}
+
+.carousel-track {
+  display: flex;
+  gap: 24px;
+  padding: 0 20px 20px;
+
+  @include mobile {
+    gap: 20px;
+    padding: 0 15px 15px;
+  }
+}
+
+.product-carousel-card {
+  // Utiliser clamp() pour des largeurs fluides mais contrôlées
+  min-width: clamp(280px, 350px, 400px);
+  max-width: 400px;
+  background: white;
+  //border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  }
+
+  @include desktop-large {
+    min-width: 350px;
+    max-width: 400px;
+  }
+
+  @include laptop {
+    min-width: 320px;
+    max-width: 380px;
+  }
+
+  @include tablet {
+    min-width: 300px;
+    max-width: 350px;
+  }
+
+  @include mobile {
+    min-width: 280px;
+    max-width: 320px;
+  }
+
+  @include mobile-small {
+    min-width: 260px;
+    max-width: 300px;
+  }
+}
+
+.product-carousel-image {
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  @include laptop {
+    height: 400px;
+  }
+
+  @include tablet {
+    height: 380px;
+  }
+
+  @include mobile {
+    height: 350px;
+  }
+
+  @include mobile-small {
+    height: 200px;
+  }
+}
+
+.product-carousel-card:hover .product-carousel-image img {
+  transform: scale(1.05);
+}
+
+.product-carousel-content {
+  padding: 28px;
+
+  h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #333;
+
+    @include mobile-small {
+      font-size: 1.15rem;
+    }
+  }
+
+  .product-type {
+    font-size: 1rem;
+    color: #666;
+    margin: 0;
+
+    @include mobile-small {
+      font-size: 0.95rem;
+    }
+  }
+
+  @include mobile {
+    padding: 22px;
+  }
+}
+
+// Suppression complète des boutons de navigation
+.carousel-btn {
+  display: none;
+}
