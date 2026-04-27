@@ -4,7 +4,7 @@ const productsData = [
     "collection": "Thal S",
     "type": "assises",
     "url": "/dist/produits/assises/thal-s-1.html",
-    "image": "/assets/images/nos-creations/thals/thals-banc-simple-2.webp"
+    "image": "/assets/images/nos-creations/thals/thals-banc-simple-1.webp"
   },
   {
     "name": "Banc double en bois",
@@ -39,7 +39,7 @@ const productsData = [
     "collection": "Thal S",
     "type": "corbeilles",
     "url": "/dist/produits/corbeilles/thal-s.html",
-    "image": "/assets/images/nos-creations/thals/thals-corbeille-md-2.webp"
+    "image": "/assets/images/nos-creations/thals/thals-corbeille-md-1.webp"
   },
   {
     "name": "Jardinière",
@@ -186,21 +186,21 @@ const productsData = [
     "collection": "Mosaïque",
     "type": "assises",
     "url": "/dist/produits/assises/mosaique-1.html",
-    "image": "/assets/images/nos-creations/mosaique/Mosaique-Tabouret-min.png"
+    "image": "/assets/images/nos-creations/mosaique/mosaique-tabouret-1.webp"
   },
   {
     "name": "Fauteuil",
     "collection": "Mosaïque",
     "type": "assises",
     "url": "/dist/produits/assises/mosaique-2.html",
-    "image": "/assets/images/nos-creations/mosaique/Mosaique-Fauteuil-2-min.png"
+    "image": "/assets/images/nos-creations/mosaique/mosaique-fauteuil-7.webp"
   },
   {
     "name": "Banquette",
     "collection": "Mosaïque",
     "type": "assises",
     "url": "/dist/produits/assises/mosaique-3.html",
-    "image": "/assets/images/nos-creations/mosaique/Mosaique-banquette-min.png"
+    "image": "/assets/images/nos-creations/mosaique/mosaique-banquette-6.webp"
   },
   {
     "name": "Banc",
@@ -214,14 +214,14 @@ const productsData = [
     "collection": "Mosaïque",
     "type": "corbeilles",
     "url": "/dist/produits/corbeilles/mosaique.html",
-    "image": "/assets/images/nos-creations/mosaique/mosaique-corbeille-1.webp"
+    "image": "/assets/images/nos-creations/mosaique/mosaique-corbeille-6.webp"
   },
   {
     "name": "Jardinière",
     "collection": "Mosaïque",
     "type": "jardinieres",
     "url": "/dist/produits/jardinieres/mosaique.html",
-    "image": "/assets/images/nos-creations/mosaique/Mosaique-jardiniere-3-min.png"
+    "image": "/assets/images/nos-creations/mosaique/mosaique-jardiniere-1.webp"
   },
   {
     "name": "Potelet",
@@ -242,7 +242,7 @@ const productsData = [
     "collection": "Mosaïque",
     "type": "supportsvelos",
     "url": "/dist/produits/supportsvelos/mosaique.html",
-    "image": "/assets/images/nos-creations/mosaique/Mosaique-Support-velo-min.png"
+    "image": "/assets/images/nos-creations/mosaique/mosaique-supportvelo-1.webp"
   },
   {
     "name": "Tabouret",

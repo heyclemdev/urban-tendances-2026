@@ -528,28 +528,120 @@ main {
 
 .choice-scroll-indicator {
   display: none;
+}
 
-  @include mobile {
-    display: flex;
-    justify-content: center;
-    gap: 0.8rem;
-    padding: 1.5rem 0;
+// ============================ //
+
+// ===== NATURE SECTION ======= //
+// ============================ //
+
+.nature-section {
+  padding: clamp(3rem, 7vw, 5rem) clamp(1.5rem, 5vw, 4rem);
+  background: rgba(245, 235, 212, 0.4);
+
+  &__intro {
+    text-align: center;
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
   }
 
-  .scroll-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #ccc;
-    transition: all 0.3s ease;
+  &__label {
+    font-family: $font-main;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: $secondary;
+    margin-bottom: 1rem;
+  }
 
-    &.active {
-      background: var(--primary, #2c5f2d);
-      width: 12px;
-      height: 12px;
+  &__title {
+    font-family: $font-title;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 300;
+    color: $color-text;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  &__subtitle {
+    font-family: $font-main;
+    font-size: clamp(0.85rem, 1.5vw, 1rem);
+    color: rgba(56, 64, 75, 0.6);
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    max-width: 900px;
+    margin: 0 auto;
+
+    @include mobile {
+      grid-template-columns: 1fr;
     }
   }
 }
+
+.nature-card {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(2rem, 4vw, 3rem);
+  text-decoration: none;
+  border: 1px solid rgba(56, 64, 75, 0.12);
+  transition: background 0.4s ease;
+
+  &:hover {
+    background: rgba(56, 64, 75, 0.05);
+
+    .nature-card__cta {
+      color: $secondary;
+      letter-spacing: 0.08em;
+    }
+  }
+
+  &__number {
+    font-family: $font-title;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: rgba(56, 64, 75, 0.2);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  &__title {
+    font-family: $font-title;
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+    font-weight: 300;
+    color: $color-text;
+    margin-bottom: 0.8rem;
+  }
+
+  &__description {
+    font-family: $font-main;
+    font-size: 0.88rem;
+    color: rgba(56, 64, 75, 0.75);
+    line-height: 1.7;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    flex: 1;
+  }
+
+  &__cta {
+    font-family: $font-main;
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: rgba(56, 64, 75, 0.65);
+    text-transform: uppercase;
+    transition: color 0.3s ease, letter-spacing 0.3s ease;
+  }
+}
+
 // ============================ //
 // ===== SKETCH SECTION ====== //
 // ========================== //

@@ -11,6 +11,7 @@
             "pageTitle": "Assises",
             "description": "Parmi d’autres pièces de la collection THAL S, Urban Tendances vous propose une déclinaison des assises avec un design plus épuré. Ces assises, composées de lames de bois, reprennent la forme originale de la collection sans découpe de motifs en acier.<br> Le banc THAL S Bois existe en 2 versions qui se distinguent par le nombre de lames.",
             "images": [
+              "assets/images/nos-creations/thals/thals-banc-simple-1.webp",
               "assets/images/nos-creations/thals/thals-banc-simple-2.webp",
               "assets/images/nos-creations/thals/thals-banc-simple-3.webp"
             ],
@@ -100,8 +101,8 @@
           "name": "Corbeille mange-debout",
           "description": "La corbeille THAL S, tout comme le soleil pour les peuples de l’Egypte antique, prend une place fondamentale dans son environnement puisqu’elle est, de nos jours, son seul protecteur. Sa teinte dorée et ses parures triangulaires font écho au sable du désert et des pyramides. Cette corbeille en acier se fera facilement sa place dans chacun de vos espaces.",
           "images": [
-            "assets/images/nos-creations/thals/thals-corbeille-md-2.webp",
             "assets/images/nos-creations/thals/thals-corbeille-md-1.webp",
+            "assets/images/nos-creations/thals/thals-corbeille-md-2.webp",
             "assets/images/nos-creations/thals/thals-corbeille-md-3.webp"
           ],
           "materials": ["Acier (S235, galvanisé, Corten, inox)"],
@@ -516,9 +517,9 @@
             "name": "Tabouret",
             "description": "La Mosaïque est bien connue comme un art décoratif dans lequel on utilise souvent des fragments de pierre pour constituer des motifs ou des figures. Dans cette collection, vous trouverez un assemblage de motifs pentagones, découpés en acier Corten, plus ou moins régulier. Ce qui rend les pièces de cette collection captivantes et singulières. De plus, les finitions en bois exotique s’intégreront avec sobriété dans vos extérieurs.",
             "images": [
-              "assets/images/nos-creations/mosaique/Mosaique-Tabouret-min.png",
-              "assets/images/nos-creations/mosaique/Mosaique-Tabouret-2-min.png",
-              "assets/images/nos-creations/mosaique/Mosaique-Tabouret-3-min.png"
+              "assets/images/nos-creations/mosaique/mosaique-tabouret-1.webp",
+              "assets/images/nos-creations/mosaique/mosaique-tabouret-2.webp",
+              "assets/images/nos-creations/mosaique/mosaique-tabouret-3.webp"
             ],
             "materials": ["Acier (S235, galvanisé, Corten, inox)"],
             "finitions": [
@@ -532,6 +533,7 @@
             "name": "Fauteuil",
             "description": "La Mosaïque est bien connue comme un art décoratif dans lequel on utilise souvent des fragments de pierre pour constituer des motifs ou des figures. Dans cette collection, vous trouverez un assemblage de motifs pentagones, découpés en acier Corten, plus ou moins régulier. Ce qui rend les pièces de cette collection captivantes et singulières. De plus, les finitions en bois exotique s’intégreront avec sobriété dans vos extérieurs.",
             "images": [
+              "assets/images/nos-creations/mosaique/mosaique-fauteuil-7.webp",
               "assets/images/nos-creations/mosaique/Mosaique-Fauteuil-2-min.png",
               "assets/images/nos-creations/mosaique/Mosaique-Fauteuil-min.png",
               "assets/images/nos-creations/mosaique/Mosaique-Fauteuil-3-min.png",
@@ -550,9 +552,10 @@
             "name": "Banquette",
             "description": "La Mosaïque est bien connue comme un art décoratif dans lequel on utilise souvent des fragments de pierre pour constituer des motifs ou des figures. Dans cette collection, vous trouverez un assemblage de motifs pentagones, découpés en acier Corten, plus ou moins régulier. Ce qui rend les pièces de cette collection captivantes et singulières. De plus, les finitions en bois exotique s’intégreront avec sobriété dans vos extérieurs.",
             "images": [
-              "assets/images/nos-creations/mosaique/Mosaique-banquette-min.png",
-              "assets/images/nos-creations/mosaique/Mosaique-banquette-3-min.png",
-              "assets/images/nos-creations/mosaique/Mosaique-banquette-2-min.png"
+              "assets/images/nos-creations/mosaique/mosaique-banquette-6.webp",
+              "assets/images/nos-creations/mosaique/mosaique-banquette-7.webp",
+              "assets/images/nos-creations/mosaique/mosaique-banquette-8.webp",
+              "assets/images/nos-creations/mosaique/mosaique-banquette-9.webp"
             ],
             "materials": ["Acier (S235, galvanisé, Corten, inox)", "Bois"],
             "finitions": [
@@ -585,6 +588,7 @@
           "name": "Corbeille",
           "description": "La Mosaïque est bien connue comme un art décoratif dans lequel on utilise souvent des fragments de pierre pour constituer des motifs ou des figures. Dans cette collection, vous trouverez un assemblage de motifs pentagones, découpés en acier Corten, plus ou moins régulier. Ce qui rend les pièces de cette collection captivantes et singulières. De plus, les finitions en bois exotique s’intégreront avec sobriété dans vos extérieurs.",
           "images": [
+            "assets/images/nos-creations/mosaique/mosaique-corbeille-6.webp",
             "assets/images/nos-creations/mosaique/mosaique-corbeille-1.webp",
             "assets/images/nos-creations/mosaique/mosaique-corbeille-2.webp",
             "assets/images/nos-creations/mosaique/mosaique-corbeille-3.webp"
@@ -601,10 +605,10 @@
           "name": "Jardinière",
           "description": "La Mosaïque est bien connue comme un art décoratif dans lequel on utilise souvent des fragments de pierre pour constituer des motifs ou des figures. Dans cette collection, vous trouverez un assemblage de motifs pentagones, découpés en acier Corten, plus ou moins régulier. Ce qui rend les pièces de cette collection captivantes et singulières. De plus, les finitions en bois exotique s’intégreront avec sobriété dans vos extérieurs.",
           "images": [
-            "assets/images/nos-creations/mosaique/Mosaique-jardiniere-3-min.png",
-            "assets/images/nos-creations/mosaique/Mosaique-jardiniere-min.png",
-            "assets/images/nos-creations/mosaique/Mosaique-jardiniere-2-min.png",
-            "assets/images/nos-creations/mosaique/Mosaique-jardiniere-4-min.png"
+            "assets/images/nos-creations/mosaique/mosaique-jardiniere-1.webp",
+            "assets/images/nos-creations/mosaique/mosaique-jardiniere-2.webp",
+            "assets/images/nos-creations/mosaique/mosaique-jardiniere-3.webp",
+            "assets/images/nos-creations/mosaique/mosaique-jardiniere-4.webp"
           ],
           "materials": ["Acier (S235, galvanisé, Corten, inox)"],
           "finitions": [
@@ -648,9 +652,9 @@
           "name": "Support Vélo",
           "description": "La Mosaïque est bien connue comme un art décoratif dans lequel on utilise souvent des fragments de pierre pour constituer des motifs ou des figures. Dans cette collection, vous trouverez un assemblage de motifs pentagones, découpés en acier Corten, plus ou moins régulier. Ce qui rend les pièces de cette collection captivantes et singulières. De plus, les finitions en bois exotique s’intégreront avec sobriété dans vos extérieurs.",
           "images": [
-            "assets/images/nos-creations/mosaique/Mosaique-Support-velo-min.png",
-            "assets/images/nos-creations/mosaique/Mosaique-Support-velo-2-min.png",
-            "assets/images/nos-creations/mosaique/Mosaique-Support-velo-3-min.png"
+            "assets/images/nos-creations/mosaique/mosaique-supportvelo-1.webp",
+            "assets/images/nos-creations/mosaique/mosaique-supportvelo-2.webp",
+            "assets/images/nos-creations/mosaique/mosaique-supportvelo-3.webp"
           ],
           "materials": ["Acier (S235, galvanisé, Corten, inox)"],
           "finitions": [

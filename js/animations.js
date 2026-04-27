@@ -30,6 +30,18 @@ window.addEventListener("load", () => {
   }, 300); // démarre après 300ms
 });
 
+// === WORD REVEAL pour le titre nature-section === //
+const natureTitle = document.querySelector(".nature-section__title");
+if (natureTitle) {
+  const words = natureTitle.textContent.trim().split(" ");
+  natureTitle.innerHTML = words
+    .map(
+      (word, i) =>
+        `<span class="word-wrap"><span class="word" style="transition-delay:${i * 0.08}s">${word}</span></span>`
+    )
+    .join(" ");
+}
+
 // OU avec Intersection Observer (au scroll)
 const observer = new IntersectionObserver(
   (entries) => {
@@ -43,7 +55,7 @@ const observer = new IntersectionObserver(
 );
 
 document
-  .querySelectorAll(".hero__block--top, .hero__block--bot")
+  .querySelectorAll(".hero__block--top, .hero__block--bot, .fade-in-up, .nature-section__title")
   .forEach((block) => {
     observer.observe(block);
   });
